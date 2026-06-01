@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-#!/usr/bin/python3
 """
 This module provides a function to print a full name.
 It validates that both arguments are strings.
