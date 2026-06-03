@@ -1,23 +1,47 @@
-#!/usr/bin/python3
-""" print_square prints a square depending on the "size" parameter
-"""
+Using ``print_square``
+-----------------------
 
+Checks if size is an int
+Checks if size is less than 0
+Checks if size is less than 0 and a float
+Prints a square with the char "#" depending on size
 
-def print_square(size):
-    """ Prints a square with a size
-    checks if "size" is an int
-    checks if "size" is a float and less than 0
-    checks if "size" is less than 0
-    checks if "size" is equal to 0
-    """
-    if type(size) != int:
-        raise TypeError("size must be an integer")
-    if type(size) == float and size < 0:
-        raise TypeError("size must be an integer")
-    if size < 0:
-        raise ValueError("size must be >= 0")
-    if size == 0:
-        return None
+First import ``print_square``
 
-    for row in range(size):
-        print('#' * size)
+    >>> print_square = __import__('4-print_square').print_square
+
+Now use it:
+
+Basic usage:
+    >>> print_square(4)
+    ####
+    ####
+    ####
+    ####
+
+Negative input:
+    >>> print_square(-1)
+    Traceback (most recent call last):
+    ...
+    ValueError: size must be >= 0
+
+Non int input:
+    >>> print_square('h')
+    Traceback (most recent call last):
+    ...
+    TypeError: size must be an integer
+
+Float AND negative input:
+    >>> print_square(-1.5)
+    Traceback (most recent call last):
+    ...
+    TypeError: size must be an integer
+
+No input:
+    >>> print_square()
+    Traceback (most recent call last):
+    ...
+    TypeError: print_square() missing 1 required positional argument: 'size'
+
+Zero input:
+    >>> print_square(0)
