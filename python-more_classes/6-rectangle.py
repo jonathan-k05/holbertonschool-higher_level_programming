@@ -9,7 +9,6 @@ class Rectangle:
     Rectangle functions and data
     """
 
-    # Public
     number_of_instances = 0
 
     def __init__(self, width=0, height=0):
@@ -51,7 +50,6 @@ class Rectangle:
             raise ValueError("height must be >= 0")
         self.__height = value
 
-    # Functions
     def area(self):
         """ Returns area of rectangle
         """
