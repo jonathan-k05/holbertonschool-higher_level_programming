@@ -20,10 +20,10 @@ class Shape(ABC):
 
 
 class Circle(Shape):
-    """A circle defined by its radius."""
+    """A circle defined by its radius. Negative radius is treated as its absolute value."""
 
     def __init__(self, radius):
-        self.radius = radius
+        self.radius = abs(radius)
 
     def area(self):
         """Return π * r²."""
