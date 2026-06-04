@@ -27,7 +27,7 @@ class Circle(Shape):
 
     def __init__(self, radius):
         """Initializes a Circle with a radius."""
-        self.radius = radius
+        self.radius = abs(radius)
 
     def area(self):
         """Returns the area of the circle."""
@@ -43,8 +43,8 @@ class Rectangle(Shape):
 
     def __init__(self, width, height):
         """Initializes a Rectangle with width and height."""
-        self.width = width
-        self.height = height
+        self.width = abs(width)
+        self.height = abs(height)
 
     def area(self):
         """Returns the area of the rectangle."""
