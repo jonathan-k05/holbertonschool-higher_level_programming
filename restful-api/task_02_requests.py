@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Truc sur le resful api de python
+Task_03
 """
 
 import csv
@@ -11,6 +11,7 @@ URL = "https://jsonplaceholder.typicode.com/posts"
 
 def fetch_and_print_posts():
     """Récupère les posts et affiche leur titre."""
+
     response = requests.get(URL)
     print(f"Status Code: {response.status_code}")
 
@@ -22,18 +23,17 @@ def fetch_and_print_posts():
 
 def fetch_and_save_posts():
     """Récupère les posts et les sauvegarde dans un fichier CSV."""
+
     response = requests.get(URL)
 
     if response.status_code == 200:
         posts = response.json()
 
-        # Structuration des données (id, title, body)
         data_to_save = [
             {'id': post['id'], 'title': post['title'], 'body': post['body']}
             for post in posts
         ]
 
-        # Écriture dans le fichier CSV
         with open('posts.csv', mode='w', newline='', encoding='utf-8') as file:
             fieldnames = ['id', 'title', 'body']
             writer = csv.DictWriter(file, fieldnames=fieldnames)
