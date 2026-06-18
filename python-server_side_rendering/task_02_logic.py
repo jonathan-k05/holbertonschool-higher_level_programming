@@ -6,14 +6,11 @@ that uses {% for %} and {% if %} to render content dynamically.
 """
 
 import json
+import os
 from flask import Flask, render_template
 from jinja2 import DictLoader
 
 app = Flask(__name__)
-
-json_data = '''{
-    "items": ["Python Book", "Flask Mug", "Jinja Sticker"]
-}'''
 
 templates = {
     'header.html': '''<header>
@@ -60,11 +57,16 @@ app.jinja_env.loader = DictLoader(templates)
 
 @app.route('/items')
 def items():
-    """
-    def items
-    """
-    data = json.loads(json_data)
-    items_list = data.get("items", [])
+    """Définition des items"""
+
+    items_list = []
+    if os.path.exists('items.json'):
+        with open('items.json', 'r') as f:
+            try:
+                data = json.load(f)
+                items_list = data.get("items", [])
+            except json.JSONDecodeError:
+                pass
     return render_template('items.html', items=items_list)
 
 
