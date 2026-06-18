@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 """
-code 
+try the jinja concept
 """
+
 from flask import Flask, render_template
 
 app = Flask(__name__)
@@ -9,27 +10,16 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    """
-    home
-    """
-
     return render_template('index.html')
 
 
 @app.route('/about')
 def about():
-    """
-    about
-    """
-
     return render_template('about.html')
 
 
 @app.route('/contact')
 def contact():
-    """
-    contact
-    """
     return render_template('contact.html')
 
 
