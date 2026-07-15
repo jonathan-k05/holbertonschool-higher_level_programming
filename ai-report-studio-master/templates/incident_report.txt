@@ -1,0 +1,19 @@
+Incident Report
+===============
+
+Date: {date}
+
+Scope:
+  A total of {total_records} records were reviewed during the incident window.
+
+Metric Under Review: {numeric_column}
+  Current Value:  {current_{numeric_column}}
+  Expected Value: {expected_{numeric_column}}
+  Deviation:      {deviation_percentage}%
+  Severity:       {severity_level}
+
+Assessment:
+  The {numeric_column} current value of {current_{numeric_column}} deviated
+  from the expected {expected_{numeric_column}} by {deviation_percentage}%,
+  which has been classified at a {severity_level} severity level based on a
+  review of {total_records} records.

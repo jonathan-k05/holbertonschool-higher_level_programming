@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Report Studio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="app-header">
+    <h1>AI Report Studio</h1>
+    <p class="subtitle">Upload your data, pick a template, and generate a report.</p>
+  </header>
+
+  <main class="container">
+    <!-- Upload section -->
+    <section class="card" id="uploadSection">
+      <h2>1. Upload a dataset</h2>
+      <div class="upload-row">
+        <input type="file" id="fileInput" accept=".csv,.json" />
+        <button type="button" id="uploadBtn">Upload</button>
+      </div>
+      <div id="uploadStatus" class="status" role="status" aria-live="polite"></div>
+    </section>
+
+    <!-- Template section (hidden until upload succeeds) -->
+    <section class="card hidden" id="templateSection">
+      <h2>2. Choose a template</h2>
+      <div class="template-row">
+        <select id="templateSelect"></select>
+        <button type="button" id="generateBtn">Generate</button>
+      </div>
+      <div id="templateStatus" class="status" role="status" aria-live="polite"></div>
+    </section>
+
+    <!-- Report section (hidden until report is generated) -->
+    <section class="card hidden" id="reportSection">
+      <h2>3. Your report</h2>
+      <div class="export-row">
+        <button type="button" onclick="window.aiReportStudio.exportReport('md')">Export Markdown</button>
+        <button type="button" onclick="window.aiReportStudio.exportReport('html')">Export HTML</button>
+        <button type="button" onclick="window.aiReportStudio.exportReport('pdf')">Export PDF</button>
+      </div>
+      <div id="reportStatus" class="status" role="status" aria-live="polite"></div>
+      <div id="reportContent" class="report-content"></div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+Weekly Digest Report
+====================
+
+Date: {date}
+
+This report summarizes activity for the period ending {date}.
+A total of {total_records} records were analyzed.
+
+Numeric Column: {numeric_column}
+  Sum:   {sum_{numeric_column}}
+  Avg:   {avg_{numeric_column}}
+  Min:   {min_{numeric_column}}
+  Max:   {max_{numeric_column}}
+
+Summary:
+  The {numeric_column} values ranged from {min_{numeric_column}} to
+  {max_{numeric_column}} across {total_records} records, with an average
+  of {avg_{numeric_column}} and a total of {sum_{numeric_column}}.

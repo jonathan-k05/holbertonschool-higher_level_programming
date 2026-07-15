@@ -1,0 +1,19 @@
+Executive Summary
+=================
+
+Date: {date}
+
+Overview:
+  A total of {total_records} records were processed in this reporting period.
+
+Key Metric: {numeric_column}
+  Sum:  {sum_{numeric_column}}
+  Avg:  {avg_{numeric_column}}
+  Min:  {min_{numeric_column}}
+  Max:  {max_{numeric_column}}
+
+Highlights:
+  The aggregated value of {numeric_column} reached {sum_{numeric_column}},
+  with a peak of {max_{numeric_column}} and a low of {min_{numeric_column}}.
+  The average of {avg_{numeric_column}} reflects steady performance across
+  all {total_records} records.
